@@ -89,7 +89,13 @@ export const PasswordGenerator = ({}: {}) => {
           className="text-2xl cursor-default h-12 mr-6 pointer-events-none"
           readOnly
         />
-        <button className="mr-4" onClick={copyToClipboard}>
+        <button
+          className="mr-4"
+          onClick={() => {
+            copyToClipboard();
+            alert("Password copied to clipboard");
+          }}
+        >
           <ContentCopyIcon />
         </button>
         <button onClick={generatePassword}>
@@ -148,7 +154,7 @@ export const PasswordGenerator = ({}: {}) => {
               }}
             />
           </div>
-          <div className="flex flex-col   ">
+          <div className="flex flex-col">
             <div className="m-1 flex items-center">
               <input
                 className="mr-2 w-5 h-5"
